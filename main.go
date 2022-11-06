@@ -21,6 +21,8 @@ func main() {
 		Example2()
 	} else if command == "example3" {
 		Example3()
+	} else if command == "example4" {
+		Example4()
 	} else if command == "help" {
 		PrintHelp()
 	}
