@@ -1,16 +1,17 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"json/files"
 )
 
 type ObjectsInObjects struct {
-	Items []Extra
+	Items []Item
 }
 
-type Extra struct {
-	Message Message
+type Item struct {
+	Extra Message
 }
 
 func Example4() {
@@ -18,6 +19,7 @@ func Example4() {
 	fmt.Println(jsonString)
 
 	oio := ObjectsInObjects{}
+	json.Unmarshal([]byte(jsonString), &oio)
 	fmt.Println("The list is:", oio.Items)
 	fmt.Println("The length is:", len(oio.Items))
 }
