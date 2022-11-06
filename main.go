@@ -1,10 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"math/rand"
 	"os"
-	"template/screen"
 	"template/util"
 	"time"
 )
@@ -19,13 +17,8 @@ func main() {
 	command := os.Args[1]
 	argMap := util.ArgsToMap()
 
-	if command == "run" {
-		t := screen.NewTemplate()
-		t.Run()
-	} else if command == "args" {
-		fmt.Println("argMap", argMap)
-		arg2 := util.GetArg(2)
-		fmt.Println("arg2", arg2)
+	if command == "example1" {
+	} else if command == "example2" {
 	} else if command == "help" {
 		PrintHelp()
 	}

@@ -6,7 +6,7 @@ import (
 
 func PrintHelp() {
 	fmt.Println("")
-	fmt.Println("  template run")
-	fmt.Println("  template help")
+	fmt.Println("  json example1")
+	fmt.Println("  json example2")
 	fmt.Println("")
 }
