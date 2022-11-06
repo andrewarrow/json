@@ -7,10 +7,10 @@ import (
 )
 
 type ObjectsInObjects struct {
-	Items []Item
+	Items []Example4Item
 }
 
-type Item struct {
+type Example4Item struct {
 	Extra Message
 }
 
