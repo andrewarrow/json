@@ -17,5 +17,5 @@ func Example2() {
 	sl := SimpleList{}
 	json.Unmarshal([]byte(jsonString), &sl)
 	fmt.Println("The simple list is:", sl.Items)
-	fmt.Println("Thelength is:", len(sl.Items))
+	fmt.Println("The length is:", len(sl.Items))
 }
