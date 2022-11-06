@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-	"json/files"
 	"math/rand"
 	"os"
 	"time"
@@ -18,8 +16,7 @@ func main() {
 	command := os.Args[1]
 
 	if command == "example1" {
-		jsonString := files.ReadFile("examples/001_say_hi.json")
-		fmt.Println(jsonString)
+		Example1()
 	} else if command == "example2" {
 	} else if command == "help" {
 		PrintHelp()
