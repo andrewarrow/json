@@ -27,13 +27,17 @@ func (c *Template) Run() {
 	}
 	defer ui.Close()
 
-	setList("Left", c.source)
+	setList("Remote API", c.source)
 	setList("", c.transfer)
+	add(c.transfer, "")
+	add(c.transfer, "")
+	add(c.transfer, "")
 	c.transfer.Border = false
-	setList("Right", c.destination)
+	setList("You", c.destination)
 
-	add(c.source, "there")
-	prepend(c.source, "hi")
+	add(c.source, "/api/v1/say-hi")
+	add(c.source, "/api/v3/list-things")
+	add(c.source, "/api/v3/complex-things")
 
 	grid := ui.NewGrid()
 	termWidth, termHeight := ui.TerminalDimensions()
@@ -68,4 +72,8 @@ func (c *Template) Run() {
 }
 
 func (c *Template) handleEnter() {
+	if c.source.SelectedRow == 0 {
+		add(c.transfer, "{\"message\": \"hi\"}")
+	} else if c.source.SelectedRow == 1 {
+	}
 }
