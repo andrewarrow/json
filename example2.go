@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"json/files"
 )
@@ -14,6 +15,7 @@ func Example2() {
 	fmt.Println(jsonString)
 
 	sl := SimpleList{}
+	json.Unmarshal([]byte(jsonString), &sl)
 	fmt.Println("The simple list is:", sl.Items)
 	fmt.Println("Thelength is:", len(sl.Items))
 }
