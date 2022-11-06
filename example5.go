@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"json/files"
 )
@@ -22,8 +23,10 @@ func Example5() {
 	fmt.Println(jsonString)
 
 	yt := Youtube{}
+	json.Unmarshal([]byte(jsonString), &yt)
 	fmt.Println("The length is:", len(yt.Items))
 	for i, item := range yt.Items {
 		fmt.Println(i, item.Snippet.Title)
+		//fmt.Println(i, html.UnescapeString(item.Snippet.Title))
 	}
 }
