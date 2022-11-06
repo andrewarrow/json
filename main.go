@@ -1,9 +1,10 @@
 package main
 
 import (
+	"fmt"
+	"json/files"
 	"math/rand"
 	"os"
-	"template/util"
 	"time"
 )
 
@@ -15,9 +16,10 @@ func main() {
 		return
 	}
 	command := os.Args[1]
-	argMap := util.ArgsToMap()
 
 	if command == "example1" {
+		jsonString := files.ReadFile("examples/001_say_hi.json")
+		fmt.Println(jsonString)
 	} else if command == "example2" {
 	} else if command == "help" {
 		PrintHelp()
